@@ -12,4 +12,12 @@ ProjPath=`pwd`
 arch=$(uname -m) # x86_64
 
 # 优先启用 neovim, 其次是 vim
-nvim=
+VimBin=
+if ! command -v nvim &> /dev/null
+then
+  echo "Not found neovim, use vim now..."
+  VimBin=$(which vim)
+else
+  VimBin=$(which nvim)
+fi
+echo $VimBin
