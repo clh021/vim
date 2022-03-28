@@ -21,11 +21,7 @@ else
   VimBin=$(which nvim)
 fi
 
-echo "
-let g:signature = \"Chenlianghong <clh021@gmail.com>\"
-set runtimepath+=$ProjPath/.vim_config/,$ProjPath/.vim_config/after/
-source $ProjPath/.vim_config/vimrc
-\"helptags $ProjPath/.vim_config/doc/
-" > $ProjPath/vimrc
+cp -f tpl.vimrc .vimrc
+sed -i "s+~+$ProjPath+g" .vimrc
 
-echo $VimBin
+$VimBin -u $ProjPath/.vimrc $@
