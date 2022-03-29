@@ -4,12 +4,12 @@
 set -e
 
 # 路径准备
-OldPath=`pwd`
+OldPath=$(pwd)
 cd "$( dirname "${BASH_SOURCE[0]}" )"
-ProjPath=`pwd`
+ProjPath=$(pwd)
 
 # arch=`dpkg --print-architecture` # amd64
-arch=$(uname -m) # x86_64
+# arch=$(uname -m) # x86_64
 
 # 优先启用 neovim, 其次是 vim
 VimBin=
@@ -21,7 +21,10 @@ else
   VimBin=$(which nvim)
 fi
 
+# 根据
 cp -f tpl.vimrc .vimrc
 sed -i "s+~+$ProjPath+g" .vimrc
 
-$VimBin -u $ProjPath/.vimrc $@
+$VimBin -u $ProjPath/.vimrc "$@"
+
+echo "$OldPath"
