@@ -15,8 +15,14 @@ ProjPath=$(pwd)
 VimBin=
 if ! command -v nvim &> /dev/null
 then
-  echo "Not found neovim, use vim now..."
-  VimBin=$(which vim)
+  if ! command -v vim &> /dev/null
+  then
+    echo "Not found neovim and vim now..."
+    exit 1
+  else
+    echo "Not found neovim, use vim now..."
+    VimBin=$(which vim)
+  fi
 else
   VimBin=$(which nvim)
 fi
@@ -27,4 +33,4 @@ sed -i "s+~+$ProjPath+g" .vimrc
 
 $VimBin -u $ProjPath/.vimrc "$@"
 
-echo "$OldPath"
+cd "$OldPath"
