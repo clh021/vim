@@ -74,12 +74,14 @@ set runtimepath+=~/vim_config/,~/vim_config/after/
 "helptags ~/vim_config/doc/
 
 
-let mapleader = "," "要定义一个使用 \"mapleader\" 变量的映射，可以使用特殊字串 \"<Leader>\"
-let g:mapleader = ","
-let maplocalleader = "\\" "<LocalLeader> 和 <Leader> 类似，除了它使用 \"maplocalleader\" 而非 \"mapleader\"以外
+"  let mapleader = " "
+"要定义一个使用 \"mapleader\" 变量的映射，可以使用特殊字串 \"<Leader>\"
+let g:mapleader = " "
+let maplocalleader = "\\"
+"<LocalLeader> 和 <Leader> 类似，除了它使用 \"maplocalleader\" 而非 \"mapleader\"以外
 
 nmap <leader>w :w!<cr> "快速保存
 nnoremap <F2> :qa<CR>
 nnoremap <F5> :e<CR>
-map <leader>e :e! ~/.vim_config/vimrc<cr> "快速编辑.vimrc
-autocmd! bufwritepost vimrc source ~/.vim_config/vimrc "当vimrc修改后，自动加载
+"  map <leader>e :e! ~/.vim_config/vimrc<cr> "快速编辑.vimrc
+"  autocmd! bufwritepost vimrc source ~/.vim_config/vimrc "当vimrc修改后，自动加载
