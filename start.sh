@@ -29,8 +29,8 @@ fi
 
 # 根据
 cp -f tpl.vimrc .vimrc
-sed -i "s+~+$ProjPath+g" .vimrc
+# sed -i "s+~+$ProjPath+g" .vimrc
 
-$VimBin -u $ProjPath/.vimrc "$@"
+HOME=$(pwd) $VimBin -u $ProjPath/.vimrc "$@"
 
 cd "$OldPath"
