@@ -1,9 +1,9 @@
 " Notice: <Esc> "Ctrl + c 或者 Ctrl + [
 " Notice: cnoremap: w!! 获取特权保存
 " Notice: inoremap 必须 set nocompatible " 关闭兼容模式
-" set cc=81 " 781列处高亮
-" set list  " 把制表符显示为^I ,用$标示行尾（使用list分辨尾部的字符是tab还是>空格）
-" set listchars=tab:>-,trail:· " Vim编辑器中默认不显示文件中的tab和空格符，通过上面的配置可以获得以下的显示效果，方便定位输入错误。
+"set cc=81 " 781列处高亮
+"set list  " 把制表符显示为^I ,用$标示行尾（使用list分辨尾部的字符是tab还是>空格）
+"set listchars=tab:>-,trail:· " Vim编辑器中默认不显示文件中的tab和空格符，通过上面的配置可以获得以下的显示效果，方便定位输入错误。
 "set foldmethod=syntax " 基于语法折叠代码
 "set gfn=Monospace\ 9 " 字体设置
 "set ignorecase " 搜索时忽略大小写
@@ -16,6 +16,7 @@
 cnoremap w!! w !sudo tee % >/dev/null 
 colorscheme darkblue " 设置默认主题 default,desert,pablo,ron,slate
 filetype plugin indent on " 开启文件类型侦测 自适应不同语言的智能缩进 根据不同类型文件加载对应插件
+set nocompatible " 关闭兼容模式
 inoremap ,. <Esc> 
 let g:mapleader = " "
 let g:mysystem = "unix"
@@ -46,7 +47,6 @@ set hlsearch " 高亮搜索
 set incsearch " 增量式搜索，边输入边搜索
 set laststatus=2 " 总是显示状态栏
 set nobackup " 关闭备份
-set nocompatible " 关闭兼容模式
 set noerrorbells " 出错时，不要发出响声
 set nofoldenable " 启动 vim 时关闭折叠代码
 set nu " 显示行号
