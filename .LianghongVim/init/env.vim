@@ -11,11 +11,8 @@
 "set t_AF=^[[38;5;%dm
 "set wildmenu "命令模式下，底部操作指令按下 Tab 键自动补全。第一次按下 Tab，会显示所有匹配的操作指令的清单；第二次按下 Tab，会依次选择各个指令。
 
-let g:mapleader = " "
 let g:mysystem = "unix"
 let g:signature = "Chenlianghong <clh021@gmail.com>"
-let mapleader = " " " 要定义一个使用 \"mapleader\" 变量的映射，可以使用特殊字串 \"<Leader>\"
-let maplocalleader = "\\" "<LocalLeader> 和 <Leader> 类似，除了它使用 \"maplocalleader\" 而非 \"mapleader\"以外
 
 set nocompatible " 关闭兼容模式
 set ai " 自动缩进
@@ -53,6 +50,7 @@ set undofile " 保留撤销历史
 set visualbell " 出错时，发出视觉提示，通常是屏幕闪烁
 set wildmode=longest:list,full
 set wrap  " 自动换行
+set timeoutlen=500
 syntax enable " 打开语法高亮
 syntax on " 允许用指定语法高亮配色方案替换默认方案
 

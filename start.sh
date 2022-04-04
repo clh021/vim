@@ -32,5 +32,6 @@ fi
 # sed -i "s+~+$ProjPath+g" .vimrc
 
 HOME=$(pwd) $VimBin -u $ProjPath/.LianghongVim/.vimrc "$@"
+# HOME=${ProjPath} $VimBin "$@"
 
 cd "$OldPath"
