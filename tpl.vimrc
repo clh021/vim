@@ -3,16 +3,6 @@ set t_Co=256 " 启用256色
 "set t_AF=^[[38;5;%dm
 set laststatus=2 " 总是显示状态栏
 "set statusline=%1*%-52F\ %2*\ %{&ff=='unix'?'\\n':(&ff=='mac'?'\\r':'\\r\\n')}\ %3*\ %{&fenc!=''?&fenc:&enc}\ %1*\ %Y\ %4*\ %04l/%03c\ %2*\ 0x%04.4B\ %1*\ %-16{strftime(\"%Y-%m-%d\ %H:%M\")}\ %5*\ %-3m\
-"set statusline=%<%F%1*%m%*%r%y%=%b\ 0x%B\ \ [l,c]%l,%c%V\ %p%%\
-"hi User1 term=inverse,bold cterm=inverse,bold ctermfg=red
-"if has("termguicolors")
-    " fix bug for vim
-"    set t_8f=^[[38;2;%lu;%lu;%lum
-"    set t_8b=^[[48;2;%lu;%lu;%lum
-
-    " enable true color
-"    set termguicolors
-"endif
 "set gfn=Monospace\ 9 " 字体设置
 set nocompatible " 关闭兼容模式
 syntax enable " 打开语法高亮
@@ -56,10 +46,7 @@ set tabstop=4 " tab 显示出多少空格
 set softtabstop=4 " 退回缩进的长度 让 vim 把连续数量的空格视为一个制表符
 set shiftwidth=4 " 每一级缩进的长度
 set expandtab " noexpandtab 用制表符缩进 / expandtab 用空格缩进
-" 开启文件类型侦测
-" 自适应不同语言的智能缩进
-" 根据不同类型文件加载对应插件
-filetype plugin indent on
+filetype plugin indent on " 开启文件类型侦测 自适应不同语言的智能缩进 根据不同类型文件加载对应插件
 "set wildmenu "命令模式下，底部操作指令按下 Tab 键自动补全。第一次按下 Tab，会显示所有匹配的操作指令的清单；第二次按下 Tab，会依次选择各个指令。
 set wildmode=longest:list,full
 set foldmethod=indent " 基于缩进折叠代码
@@ -70,68 +57,26 @@ colorscheme darkblue " 设置默认主题 default,desert,pablo,ron,slate
 
 let g:signature = "Chenlianghong <clh021@gmail.com>"
 let g:mysystem = "unix"
-"  set runtimepath+=~/vim_config/,~/vim_config/after/
-"source ~/vim_config/.vimrc
-"helptags ~/vim_config/doc/
 
 
-"  let mapleader = " "
-"要定义一个使用 \"mapleader\" 变量的映射，可以使用特殊字串 \"<Leader>\"
+let mapleader = " " " 要定义一个使用 \"mapleader\" 变量的映射，可以使用特殊字串 \"<Leader>\"
 let g:mapleader = " "
-let maplocalleader = "\\"
-"<LocalLeader> 和 <Leader> 类似，除了它使用 \"maplocalleader\" 而非 \"mapleader\"以外
+let maplocalleader = "\\" "<LocalLeader> 和 <Leader> 类似，除了它使用 \"maplocalleader\" 而非 \"mapleader\"以外
 
 nmap <leader>w :w!<cr> "快速保存
 noremap <leader>q :qa<cr> "退出所有
 
-" <leader>v brings up .vimrc
-" <leader>V reloads it and makes all changes active (file has to be saved first)
-"  noremap <leader>v :e! $MYVIMRC<CR>
-"  noremap <silent> <leader>V :source $MYVIMRC<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
-" default no $MYVIMERC and noneed set this env
-
-" 输入模式下如何舒服的 <Esc>?
-" Ctrl + c 或者 Ctrl + [
-" 注意： inoremap 必须 set nocompatible " 关闭兼容模式
-inoremap ,. <Esc>
+" Notice: <Esc> "Ctrl + c 或者 Ctrl + [
+" Notice: inoremap 必须 set nocompatible " 关闭兼容模式
+" Notice: cnoremap: w!! 获取特权保存
+inoremap ,. <Esc> 
 vnoremap ,. <Esc>
-cnoremap w!! w !sudo tee % >/dev/null "获取特权保存
-"  map <leader>e :e! ~/.vim_config/vimrc<cr> "快速编辑.vimrc
-"  autocmd! bufwritepost vimrc source ~/.vim_config/vimrc "当vimrc修改后，自动加载
+cnoremap w!! w !sudo tee % >/dev/null 
 
-" Swap implementations of ` and ' jump to markers
-" By default, ' jumps to the marked line, ` jumps to the marked line and
-" column, so swap them
-"  nnoremap ' `
-"  nnoremap ` '
-
-" Now we don't have to move our fingers so far when we want to scroll through
-" the command history; also, don't forget the q: command (see :h q: for more
-" info)
-cnoremap <c-j> <down>
-cnoremap <c-k> <up>
-
-" Keep search matches in the middle of the window.
-" zz centers the screen on the cursor, zv unfolds any fold if the cursor
-" suddenly appears inside a fold.
 nnoremap * *zzzv
 nnoremap # #zzzv
 nnoremap n nzzzv
 nnoremap N Nzzzv
 
-" Also center the screen when jumping through the changelist
 nnoremap g; g;zz
 nnoremap g, g,zz
-
-" When you type the first tab, it will complete as much as possible, the second
-" tab hit will provide a list, the third and subsequent tabs will cycle through
-" completion options so you can complete the file without further keys
-set wildmode=longest,list,full
-set wildmenu            " completion with menu
-" This changes the default display of tab and CR chars in list mode
-set listchars=tab:▸\ ,eol:¬
-
-" The "longest" option makes completion insert the longest prefix of all
-" the possible matches; see :h completeopt
-set completeopt=menu,menuone,longest
-set switchbuf=useopen,usetab
