@@ -66,7 +66,7 @@ set foldmethod=indent " 基于缩进折叠代码
 "set foldmethod=syntax " 基于语法折叠代码
 set nofoldenable " 启动 vim 时关闭折叠代码
 
-colorscheme darkblue " 设置使用的默认主题 default,desert,pablo,ron,slate
+colorscheme darkblue " 设置默认主题 default,desert,pablo,ron,slate
 
 let g:signature = "Chenlianghong <clh021@gmail.com>"
 let g:mysystem = "unix"
