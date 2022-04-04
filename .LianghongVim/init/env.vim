@@ -1,6 +1,3 @@
-" Notice: <Esc> "Ctrl + c 或者 Ctrl + [
-" Notice: cnoremap: w!! 获取特权保存
-" Notice: inoremap 必须 set nocompatible " 关闭兼容模式
 "set cc=81 " 781列处高亮
 "set list  " 把制表符显示为^I ,用$标示行尾（使用list分辨尾部的字符是tab还是>空格）
 "set listchars=tab:>-,trail:· " Vim编辑器中默认不显示文件中的tab和空格符，通过上面的配置可以获得以下的显示效果，方便定位输入错误。
@@ -13,24 +10,14 @@
 "set t_AB=^[[48;5;%dm
 "set t_AF=^[[38;5;%dm
 "set wildmenu "命令模式下，底部操作指令按下 Tab 键自动补全。第一次按下 Tab，会显示所有匹配的操作指令的清单；第二次按下 Tab，会依次选择各个指令。
-cnoremap w!! w !sudo tee % >/dev/null 
-colorscheme darkblue " 设置默认主题 default,desert,pablo,ron,slate
-filetype plugin indent on " 开启文件类型侦测 自适应不同语言的智能缩进 根据不同类型文件加载对应插件
-set nocompatible " 关闭兼容模式
-inoremap ,. <Esc> 
+
 let g:mapleader = " "
 let g:mysystem = "unix"
 let g:signature = "Chenlianghong <clh021@gmail.com>"
 let mapleader = " " " 要定义一个使用 \"mapleader\" 变量的映射，可以使用特殊字串 \"<Leader>\"
 let maplocalleader = "\\" "<LocalLeader> 和 <Leader> 类似，除了它使用 \"maplocalleader\" 而非 \"mapleader\"以外
-nmap <leader>w :w!<cr> "快速保存
-nnoremap # #zzzv
-nnoremap * *zzzv
-nnoremap N Nzzzv
-nnoremap g, g,zz
-nnoremap g; g;zz
-nnoremap n nzzzv
-noremap <leader>q :qa<cr> "退出所有
+
+set nocompatible " 关闭兼容模式
 set ai " 自动缩进
 set autochdir " 自动切换工作目录
 set autoindent " 打开自动缩进
@@ -68,4 +55,7 @@ set wildmode=longest:list,full
 set wrap  " 自动换行
 syntax enable " 打开语法高亮
 syntax on " 允许用指定语法高亮配色方案替换默认方案
-vnoremap ,. <Esc>
+
+
+colorscheme darkblue " 设置默认主题 default,desert,pablo,ron,slate
+filetype plugin indent on " 开启文件类型侦测 自适应不同语言的智能缩进 根据不同类型文件加载对应插件
