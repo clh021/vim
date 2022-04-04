@@ -32,9 +32,9 @@ set incsearch " 增量式搜索，边输入边搜索
 set laststatus=2 " 总是显示状态栏
 set nobackup " 关闭备份
 set noerrorbells " 出错时，不要发出响声
-set nofoldenable " 启动 vim 时关闭折叠代码
+"  set nofoldenable " 启动 vim 时关闭折叠代码
 set nu " 显示行号
-set paste " 在Vim中通过鼠标右键粘贴时会在行首多出许多缩进和空格，通过set paste可以在插入模式下粘贴内容时不会有任何格式变形、胡乱缩进等问题。
+"  set paste " 鼠标右键粘贴时处理多出的缩进和空格，但会影响 inoremap 的绑定
 set relativenumber " 相对行号
 set ruler " 显示光标当前位置
 set shiftwidth=4 " 每一级缩进的长度

@@ -31,7 +31,8 @@ fi
 # cp -f tpl.vimrc .vimrc
 # sed -i "s+~+$ProjPath+g" .vimrc
 
-HOME=$(pwd) $VimBin -u $ProjPath/.LianghongVim/.vimrc "$@"
-# HOME=${ProjPath} $VimBin "$@"
+HOME=$(pwd) $VimBin -u "$ProjPath/.LianghongVim/.vimrc" "$@"
+# HOME=$(pwd) $VimBin -u "$ProjPath/.SpaceVim/vimrc" "$@"
+# HOME=${ProjPath} $VimBin -u "$ProjPath/.vimrc" "$@"
 
 cd "$OldPath"
