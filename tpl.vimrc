@@ -46,7 +46,7 @@ set termencoding=utf-8
 set encoding=utf-8
 
 set paste " 在Vim中通过鼠标右键粘贴时会在行首多出许多缩进和空格，通过set paste可以在插入模式下粘贴内容时不会有任何格式变形、胡乱缩进等问题。
-set cc=79 " 79列处高亮
+"  set cc=81 " 781列处高亮
 set wrap  " 自动换行
 " set list  " 把制表符显示为^I ,用$标示行尾（使用list分辨尾部的字符是tab还是>空格）
 " set listchars=tab:>-,trail:· " Vim编辑器中默认不显示文件中的tab和空格符，通过上面的配置可以获得以下的显示效果，方便定位输入错误。
@@ -66,10 +66,11 @@ set foldmethod=indent " 基于缩进折叠代码
 "set foldmethod=syntax " 基于语法折叠代码
 set nofoldenable " 启动 vim 时关闭折叠代码
 
+colorscheme darkblue " 设置使用的默认主题 default,desert,pablo,ron,slate
 
 let g:signature = "Chenlianghong <clh021@gmail.com>"
 let g:mysystem = "unix"
-set runtimepath+=~/vim_config/,~/vim_config/after/
+"  set runtimepath+=~/vim_config/,~/vim_config/after/
 "source ~/vim_config/.vimrc
 "helptags ~/vim_config/doc/
 
@@ -81,7 +82,39 @@ let maplocalleader = "\\"
 "<LocalLeader> 和 <Leader> 类似，除了它使用 \"maplocalleader\" 而非 \"mapleader\"以外
 
 nmap <leader>w :w!<cr> "快速保存
-nnoremap <F2> :qa<CR>
-nnoremap <F5> :e<CR>
+noremap <leader>q :qa<cr> "退出所有
+
+" <leader>v brings up .vimrc
+" <leader>V reloads it and makes all changes active (file has to be saved first)
+noremap <leader>v :e! $MYVIMRC<CR>
+noremap <silent> <leader>V :source $MYVIMRC<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+
+inoremap ,. <Esc> "退出输入模式
+vnoremap ,. <Esc> "退出视图模式
+cnoremap w!! w !sudo tee % >/dev/null "获取特权保存
 "  map <leader>e :e! ~/.vim_config/vimrc<cr> "快速编辑.vimrc
 "  autocmd! bufwritepost vimrc source ~/.vim_config/vimrc "当vimrc修改后，自动加载
+
+" Swap implementations of ` and ' jump to markers
+" By default, ' jumps to the marked line, ` jumps to the marked line and
+" column, so swap them
+"  nnoremap ' `
+"  nnoremap ` '
+
+" Now we don't have to move our fingers so far when we want to scroll through
+" the command history; also, don't forget the q: command (see :h q: for more
+" info)
+cnoremap <c-j> <down>
+cnoremap <c-k> <up>
+
+" Keep search matches in the middle of the window.
+" zz centers the screen on the cursor, zv unfolds any fold if the cursor
+" suddenly appears inside a fold.
+nnoremap * *zzzv
+nnoremap # #zzzv
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+" Also center the screen when jumping through the changelist
+nnoremap g; g;zz
+nnoremap g, g,zz
