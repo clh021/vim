@@ -24,19 +24,21 @@ set clipboard=unnamedplus
 set encoding=utf-8
 set expandtab " noexpandtab 用制表符缩进 / expandtab 用空格缩进
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
-set foldmethod=indent " 基于缩进折叠代码
 set hid " 可以在没有保存得情况下切换buffer
 set history=1000 " Vim 需要记住多少次历史操作
 set hlsearch " 高亮搜索
 set incsearch " 增量式搜索，边输入边搜索
-set laststatus=2 " 总是显示状态栏
+set laststatus=1 " 状态栏 0不显示 1多窗口时显示 2总是显示
+set linebreak " 不会在单词内部折行
 set nobackup " 关闭备份
 set noerrorbells " 出错时，不要发出响声
+"  set foldmethod=indent " 基于缩进折叠代码
 "  set nofoldenable " 启动 vim 时关闭折叠代码
 set nu " 显示行号
 "  set paste " 鼠标右键粘贴时处理多出的缩进和空格，但会影响 inoremap 的绑定
 set relativenumber " 相对行号
 set ruler " 显示光标当前位置
+set scrolloff=5 " 光标距离顶部/底部留出行空出行
 set shiftwidth=4 " 每一级缩进的长度
 set showcmd " 显示命令
 set showmatch " 高亮匹配括号
@@ -47,6 +49,9 @@ set t_Co=256 " 启用256色
 set tabstop=4 " tab 显示出多少空格
 set termencoding=utf-8
 set undofile " 保留撤销历史
+set backupdir=~/.vim/.backup//
+set directory=~/.vim/.swp//
+set undodir=~/.vim/.undo//
 set visualbell " 出错时，发出视觉提示，通常是屏幕闪烁
 set wildmode=longest:list,full
 set wrap  " 自动换行
