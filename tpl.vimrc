@@ -14,7 +14,7 @@ set laststatus=2 " 总是显示状态栏
 "    set termguicolors
 "endif
 "set gfn=Monospace\ 9 " 字体设置
-"set nocompatible "关闭兼容模式"
+set nocompatible " 关闭兼容模式
 syntax enable " 打开语法高亮
 syntax on " 允许用指定语法高亮配色方案替换默认方案
 set autoindent " 打开自动缩进
@@ -39,7 +39,6 @@ set history=1000 " Vim 需要记住多少次历史操作
 set nobackup " 关闭备份
 set ai " 自动缩进
 set si " 智能缩进
-set autoread " 文件外部更改时，自动读入
 
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
 set termencoding=utf-8
@@ -57,9 +56,10 @@ set tabstop=4 " tab 显示出多少空格
 set softtabstop=4 " 退回缩进的长度 让 vim 把连续数量的空格视为一个制表符
 set shiftwidth=4 " 每一级缩进的长度
 set expandtab " noexpandtab 用制表符缩进 / expandtab 用空格缩进
-filetype on " 开启文件类型侦测
-filetype indent on " 自适应不同语言的智能缩进
-filetype plugin on " 根据不同类型文件加载对应插件
+" 开启文件类型侦测
+" 自适应不同语言的智能缩进
+" 根据不同类型文件加载对应插件
+filetype plugin indent on
 "set wildmenu "命令模式下，底部操作指令按下 Tab 键自动补全。第一次按下 Tab，会显示所有匹配的操作指令的清单；第二次按下 Tab，会依次选择各个指令。
 set wildmode=longest:list,full
 set foldmethod=indent " 基于缩进折叠代码
@@ -86,11 +86,15 @@ noremap <leader>q :qa<cr> "退出所有
 
 " <leader>v brings up .vimrc
 " <leader>V reloads it and makes all changes active (file has to be saved first)
-noremap <leader>v :e! $MYVIMRC<CR>
-noremap <silent> <leader>V :source $MYVIMRC<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+"  noremap <leader>v :e! $MYVIMRC<CR>
+"  noremap <silent> <leader>V :source $MYVIMRC<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+" default no $MYVIMERC and noneed set this env
 
-inoremap ,. <Esc> "退出输入模式
-vnoremap ,. <Esc> "退出视图模式
+" 输入模式下如何舒服的 <Esc>?
+" Ctrl + c 或者 Ctrl + [
+" 注意： inoremap 必须 set nocompatible " 关闭兼容模式
+inoremap ,. <Esc>
+vnoremap ,. <Esc>
 cnoremap w!! w !sudo tee % >/dev/null "获取特权保存
 "  map <leader>e :e! ~/.vim_config/vimrc<cr> "快速编辑.vimrc
 "  autocmd! bufwritepost vimrc source ~/.vim_config/vimrc "当vimrc修改后，自动加载
@@ -118,3 +122,16 @@ nnoremap N Nzzzv
 " Also center the screen when jumping through the changelist
 nnoremap g; g;zz
 nnoremap g, g,zz
+
+" When you type the first tab, it will complete as much as possible, the second
+" tab hit will provide a list, the third and subsequent tabs will cycle through
+" completion options so you can complete the file without further keys
+set wildmode=longest,list,full
+set wildmenu            " completion with menu
+" This changes the default display of tab and CR chars in list mode
+set listchars=tab:▸\ ,eol:¬
+
+" The "longest" option makes completion insert the longest prefix of all
+" the possible matches; see :h completeopt
+set completeopt=menu,menuone,longest
+set switchbuf=useopen,usetab
