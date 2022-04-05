@@ -13,6 +13,11 @@
 
 let g:mysystem = "unix"
 let g:signature = "Chenlianghong <clh021@gmail.com>"
+"  let g:session_autoload        = 'no'
+"  let g:session_autosave        = 'yes'
+"  let g:session_default_to_last = 'yes'
+"  let g:session_directory       = '~/tmp/vim/sessions'
+"  let g:EasyMotion_leader_key = '<leader>e'
 
 set nocompatible " 关闭兼容模式
 set ai " 自动缩进
@@ -38,7 +43,7 @@ set nu " 显示行号
 "  set paste " 鼠标右键粘贴时处理多出的缩进和空格，但会影响 inoremap 的绑定
 set relativenumber " 相对行号
 set ruler " 显示光标当前位置
-set scrolloff=5 " 光标距离顶部/底部留出行空出行
+set scrolloff=5 " 光标距离顶部/底部留出行空出行 set so=7
 set shiftwidth=4 " 每一级缩进的长度
 set showcmd " 显示命令
 set showmatch " 高亮匹配括号
@@ -54,6 +59,8 @@ set directory=~/.vim/.swp//
 set undodir=~/.vim/.undo//
 set visualbell " 出错时，发出视觉提示，通常是屏幕闪烁
 set wildmode=longest:list,full
+set wildignore=*.dll,*.exe,*.jpg,*.gif,*.png
+"  set wildmenu " 完成菜单
 set wrap  " 自动换行
 set timeoutlen=500
 syntax enable " 打开语法高亮
