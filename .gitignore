@@ -9,3 +9,4 @@ coding
 .vim/.undo
 .viminfo
 .config/nvim/.netrwhist
+*session*
