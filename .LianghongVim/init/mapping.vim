@@ -17,3 +17,8 @@ nnoremap g, g,zz
 nnoremap g; g;zz
 nnoremap n nzzzv
 vnoremap <nowait> jj <Esc>
+"---------- easy to command mode --------------------------------
+nnoremap ; :
+vnoremap ; :
+"---------- easy to command mode --------------------------------
+
