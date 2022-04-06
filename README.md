@@ -36,6 +36,7 @@ How to push all?
 case 1:
 ```bash
 git remote add gitee git@gitee.com:clh21/vim.git
+git remote remove gitee
 git remote add all git@gitee.com:clh21/vim.git
 git remote set-url --add all git@github.com:clh021/vim.git
 git push all --all
