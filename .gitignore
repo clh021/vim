@@ -5,8 +5,8 @@ coding
 .LianghongVim/plugged
 .cache
 .npm
-.vim/.swp
-.vim/.undo
 .viminfo
 .config/nvim/.netrwhist
 *session*
+.vim/.undo/*
+.vim/.netrwhist
