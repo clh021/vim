@@ -8,3 +8,4 @@ coding
 .vim/.swp
 .vim/.undo
 .viminfo
+.config/nvim/.netrwhist
