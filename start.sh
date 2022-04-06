@@ -27,11 +27,20 @@ else
   VimBin=$(which nvim)
 fi
 
-# 根据
-# cp -f tpl.vimrc .vimrc
-# sed -i "s+~+$ProjPath+g" .vimrc
+display_usage() {
+    echo -e "Just use it like vim bin."
+    exit 1
+}
 
-HOME=$(pwd) $VimBin -u "$ProjPath/.LianghongVim/.vimrc" "$@"
+CMD=""
+if [[ ( $@ == "--help" ) || $@ == "-h" ]]; then
+    display_usage
+elif [[ -n $@ ]]; then
+    CMD=$@
+fi
+
+# HOME=$(pwd) $VimBin -u "$ProjPath/.LianghongVim/.vimrc" "$@"
+HOME=$(pwd) $VimBin -u "$ProjPath/.LianghongVim/.vimrc" ${CMD}
 # HOME=$(pwd) $VimBin -u "$ProjPath/.SpaceVim/vimrc" "$@"
 # HOME=${ProjPath} $VimBin -u "$ProjPath/.vimrc" "$@"
 
