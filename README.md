@@ -6,8 +6,13 @@
 - 学习并习惯使用 vim
 
 ## 如何使用这个项目
+### 公共主机上临时使用
 将项目根目录的 `start.sh` 当作是 `vim`或者`nvim` 的命令使用即可。
 前提是宿主机上真的安装有 `vim`或者`nvim`。
+### 自己笔记本上使用
+- clone 本项目
+- echo 'source <sfile>:h/Projects/vim/.LianghongVim/.vimrc' > .vimrc
+- mkdir .vim/{.backup,.swp,.undo} -p
 
 ## 查看/导出 所有快捷键配置
 ```bash
