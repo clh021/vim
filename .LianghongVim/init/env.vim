@@ -40,7 +40,6 @@ set noerrorbells " 出错时，不要发出响声
 "  set foldmethod=indent " 基于缩进折叠代码
 "  set nofoldenable " 启动 vim 时关闭折叠代码
 set nu " 显示行号
-"  set paste " 鼠标右键粘贴时处理多出的缩进和空格，但会影响 inoremap 的绑定
 set relativenumber " 相对行号
 set ruler " 显示光标当前位置
 set scrolloff=5 " 光标距离顶部/底部留出行空出行 set so=7
@@ -66,6 +65,12 @@ set timeoutlen=500
 syntax enable " 打开语法高亮
 syntax on " 允许用指定语法高亮配色方案替换默认方案
 
+"---------- set paste -------------------------------------------
+"  set paste " 鼠标右键粘贴时处理多出的缩进和空格，但会影响 inoremap 的绑定
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
+"---------- set paste -------------------------------------------
 
 colorscheme darkblue " 设置默认主题 default,desert,pablo,ron,slate
 filetype plugin indent on " 开启文件类型侦测 自适应不同语言的智能缩进 根据不同类型文件加载对应插件
