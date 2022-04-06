@@ -32,3 +32,25 @@ Save to txt like this.
 :pwd
 ```
 
+How to push all?
+case 1:
+```bash
+git remote add gitee git@gitee.com:clh21/vim.git
+git remote add all git@gitee.com:clh21/vim.git
+git remote set-url --add all git@github.com:clh021/vim.git
+git push all --all
+git fetch --all
+
+# Tip: To no need typing all whenever you send a commit, just use "origin" instead of "all":
+git remote set-url --add origin nodester-host:path/proj.git
+```
+
+case 2:
+```bash
+# To push all branches to all remotes:
+git remote | xargs -L1 git push --all
+# To push a specific branch to all remotes
+git remote | xargs -L1 -I R git push R master
+# To make a git alias for the command
+git config --global alias.pushall '!git remote | xargs -L1 git push --all'
+```
