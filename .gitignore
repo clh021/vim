@@ -5,3 +5,6 @@ coding
 .LianghongVim/plugged
 .cache
 .npm
+.vim/.swp
+.vim/.undo
+.viminfo
