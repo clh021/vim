@@ -39,9 +39,7 @@ elif [[ -n $@ ]]; then
     CMD=$@
 fi
 
-# HOME=$(pwd) $VimBin -u "$ProjPath/.LianghongVim/.vimrc" "$@"
-HOME=$(pwd) $VimBin -u "$ProjPath/.LianghongVim/.vimrc" ${CMD}
-# HOME=$(pwd) $VimBin -u "$ProjPath/.SpaceVim/vimrc" "$@"
-# HOME=${ProjPath} $VimBin -u "$ProjPath/.vimrc" "$@"
-
 cd "$OldPath"
+HOME=${ProjPath} $VimBin -u "${ProjPath}/.LianghongVim/.vimrc" ${CMD}
+# HOME=$(pwd) $VimBin -u "$ProjPath/.SpaceVim/vimrc" "$@"
+

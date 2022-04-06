@@ -55,3 +55,9 @@ git remote | xargs -L1 -I R git push R master
 # To make a git alias for the command
 git config --global alias.pushall '!git remote | xargs -L1 git push --all'
 ```
+
+这个配置有什么不同？
+```
+1. 使用 `;` 来作为 `:`使用，提前预防左手小指头的肌肉损伤。  `:` 仍然可用。
+2. 使用 `<space>` 作为 leader 键。 暂未添加 leader 绑定功能。
+```
