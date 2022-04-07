@@ -13,13 +13,13 @@
 - clone 本项目
 - mkdir .vim/{.backup,.swp,.undo} -p
 #### Vim
-- ~/.vim/
-- echo 'source <sfile>:h/Projects/vim/.LianghongVim/.vimrc' > ~/.vim/vimrc
+- mkdir ~/.vim/
+- echo 'source ~/Projects/vim/.LianghongVim/.vimrc' > ~/.vim/vimrc
 #### NeoVim
-- ~/.config/nvim/
+- mkdir ~/.config/nvim/
 - echo 'source ~/Projects/vim/.LianghongVim/.vimrc' > ~/.config/nvim/init.vim
 
-## 这个配置特别？
+## 这个配置有什么特别？
 - 使用 `;` 来作为 `:`使用，提前预防左手小指头的肌肉损伤。  `:` 仍然可用。
 - ff -> Esc InsertMode&ViewMode (特殊情形请记得使用 Ctrl+c)。
 - 使用 `<space>` 作为 leader 键。 暂未添加 leader 绑定功能。
