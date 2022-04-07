@@ -1,6 +1,4 @@
 "set cc=81 " 781列处高亮
-"set list  " 把制表符显示为^I ,用$标示行尾（使用list分辨尾部的字符是tab还是>空格）
-"set listchars=tab:>-,trail:· " Vim编辑器中默认不显示文件中的tab和空格符，通过上面的配置可以获得以下的显示效果，方便定位输入错误。
 "set foldmethod=syntax " 基于语法折叠代码
 "set gfn=Monospace\ 9 " 字体设置
 "set ignorecase " 搜索时忽略大小写
@@ -9,8 +7,7 @@
 "set statusline=%1*%-52F\ %2*\ %{&ff=='unix'?'\\n':(&ff=='mac'?'\\r':'\\r\\n')}\ %3*\ %{&fenc!=''?&fenc:&enc}\ %1*\ %Y\ %4*\ %04l/%03c\ %2*\ 0x%04.4B\ %1*\ %-16{strftime(\"%Y-%m-%d\ %H:%M\")}\ %5*\ %-3m\
 "set t_AB=^[[48;5;%dm
 "set t_AF=^[[38;5;%dm
-"set wildmenu "命令模式下，底部操作指令按下 Tab 键自动补全。第一次按下 Tab，会显示所有匹配的操作指令的清单；第二次按下 Tab，会依次选择各个指令。
-
+"    s  i   i   d    .   ..
 let g:mysystem = "unix"
 let g:signature = "Chenlianghong <clh021@gmail.com>"
 "  let g:session_autoload        = 'no'
@@ -26,9 +23,7 @@ set autoindent " 打开自动缩进
 set autoread " 自动重载文件更新
 set backspace=indent,eol,start   " 设置backspace删除
 set clipboard=unnamedplus
-set encoding=utf-8
 set expandtab " noexpandtab 用制表符缩进 / expandtab 用空格缩进
-set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
 set hid " 可以在没有保存得情况下切换buffer
 set history=1000 " Vim 需要记住多少次历史操作
 set hlsearch " 高亮搜索
@@ -50,8 +45,7 @@ set si " 智能缩进
 set smartcase " 智能匹配大小写
 set softtabstop=4 " 退回缩进的长度 让 vim 把连续数量的空格视为一个制表符
 set t_Co=256 " 启用256色
-set tabstop=4 " tab 显示出多少空格
-set termencoding=utf-8
+"set tabstop=4 " tab 显示出多少空格
 set undofile " 保留撤销历史
 set backupdir=~/.vim/.backup//
 set directory=~/.vim/.swp//
@@ -59,9 +53,10 @@ set undodir=~/.vim/.undo//
 set visualbell " 出错时，发出视觉提示，通常是屏幕闪烁
 set wildmode=longest:list,full
 set wildignore=*.dll,*.exe,*.jpg,*.gif,*.png
-"  set wildmenu " 完成菜单
+"  set wildmenu " 自动补全命令行下菜单和指令
 set wrap  " 自动换行
 set timeoutlen=500
+" set syntax=whitespace
 syntax enable " 打开语法高亮
 syntax on " 允许用指定语法高亮配色方案替换默认方案
 
@@ -71,6 +66,15 @@ nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
 "---------- set paste -------------------------------------------
+"---------- set encoding ----------------------------------------
+set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
+set termencoding=utf-8
+set encoding=utf-8
+"scriptencoding utf-8
+"---------- set encoding ----------------------------------------
+set list  " 把制表符显示为^I ,用$标示行尾（使用list分辨尾部的字符是tab还是>空格）
+set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:·
+" Vim编辑器中默认不显示文件中的tab和空格符，通过上面的配置可以获得以下的显示效果，方便定位输入错误。
 
 colorscheme darkblue " 设置默认主题 default,desert,pablo,ron,slate
 filetype plugin indent on " 开启文件类型侦测 自适应不同语言的智能缩进 根据不同类型文件加载对应插件
