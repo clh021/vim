@@ -7,7 +7,6 @@
 "set statusline=%1*%-52F\ %2*\ %{&ff=='unix'?'\\n':(&ff=='mac'?'\\r':'\\r\\n')}\ %3*\ %{&fenc!=''?&fenc:&enc}\ %1*\ %Y\ %4*\ %04l/%03c\ %2*\ 0x%04.4B\ %1*\ %-16{strftime(\"%Y-%m-%d\ %H:%M\")}\ %5*\ %-3m\
 "set t_AB=^[[48;5;%dm
 "set t_AF=^[[38;5;%dm
-"    s  i   i   d    .   ..
 let g:mysystem = "unix"
 let g:signature = "Chenlianghong <clh021@gmail.com>"
 "  let g:session_autoload        = 'no'
@@ -73,7 +72,8 @@ set encoding=utf-8
 "scriptencoding utf-8
 "---------- set encoding ----------------------------------------
 set list  " 把制表符显示为^I ,用$标示行尾（使用list分辨尾部的字符是tab还是>空格）
-set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:·
+set listchars=eol:¬,tab:⍿»,trail:~,extends:>,precedes:<,space:·
+"       	          	         	      .
 " Vim编辑器中默认不显示文件中的tab和空格符，通过上面的配置可以获得以下的显示效果，方便定位输入错误。
 
 colorscheme darkblue " 设置默认主题 default,desert,pablo,ron,slate
