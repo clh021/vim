@@ -67,5 +67,6 @@ let g:which_key_map['w'] = {
 call plug#begin('~/.LianghongVim/plugged')
 "   Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 "   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+"   Plug 'Chiel92/vim-autoformat'
 Plug 'liuchengxu/vim-which-key'
 call plug#end()
