@@ -54,7 +54,7 @@ set wildmode=longest:list,full
 set wildignore=*.dll,*.exe,*.jpg,*.gif,*.png
 "  set wildmenu " 自动补全命令行下菜单和指令
 set wrap  " 自动换行
-set timeoutlen=500
+set timeoutlen=200
 " set syntax=whitespace
 syntax enable " 打开语法高亮
 syntax on " 允许用指定语法高亮配色方案替换默认方案
