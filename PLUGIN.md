@@ -31,6 +31,12 @@ volt get preservim/nerdtree
 
 设置了 map .Lianghong/plugins/nerdtree.vim
 
+## 安装startify 插件
+期望: 可以快速进入工作状态，恢复此前的工作状态
+```bash
+volt get mhinz/vim-startify
+```
+
 ## 更多插件
 
 https://vimawesome.com/
