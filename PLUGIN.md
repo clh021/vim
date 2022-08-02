@@ -37,6 +37,13 @@ volt get preservim/nerdtree
 volt get mhinz/vim-startify
 ```
 
+
+## 安装 gruvbox 插件
+期望: 舒适的界面，改善适应的体验
+```bash
+volt get morhetz/gruvbox
+```
+
 ## 更多插件
 
 https://vimawesome.com/
