@@ -7,6 +7,7 @@ source <sfile>:h/init/autocmd.vim
 source <sfile>:h/plugins/startify.vim
 source <sfile>:h/plugins/nerdtree.vim
 source <sfile>:h/plugins/gruvbox.vim
+source <sfile>:h/plugins/youCompleteMe.vim
 "  source <sfile>:h/init/plugins.vim
 "  for f in glob('~/.vim/*.vim', 0, 1)
 "    execute 'source' f

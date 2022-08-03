@@ -79,3 +79,6 @@ set listchars=eol:¬,tab:⍿»,trail:~,extends:>,precedes:<,space:·
 
 colorscheme darkblue " 设置默认主题 default,desert,pablo,ron,slate
 filetype plugin indent on " 开启文件类型侦测 自适应不同语言的智能缩进 根据不同类型文件加载对应插件
+
+" 退出插入模式指定类型的文件自动保存
+au InsertLeave *.go,*.sh,*.php write
