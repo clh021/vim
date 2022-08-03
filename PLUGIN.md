@@ -1,6 +1,25 @@
 # 插件篇
 
 > 安装 [volt](https://github.com/vim-volt/volt) 到 PATH 中
+## 使用 volt
+```bash
+# 插件一键下载
+volt get -l # 基于 $VOLTPATH/lock.json 安装缺少的插件
+
+# 可以在“plugconf”文件中编写插件配置。文件放置在：
+# $VOLTPATH/plugconf/<repository>.vim
+# https://github.com/vim-volt/volt#config
+
+# 切换插件集
+volt profile list # 显示所有插件列表
+volt profile new foo   # will create profile "foo"
+volt profile set foo   # will switch profile to "foo"
+volt profile destroy foo   # will delete profile "foo"
+volt enable tyru/caw.vim    # enable loading tyru/caw.vim on current profile
+volt profile add foo tyru/caw.vim    # enable loading tyru/caw.vim on "foo" profile
+volt disable tyru/caw.vim   # disable loading tyru/caw.vim on current profile
+volt profile rm foo tyru/caw.vim    # disable loading tyru/caw.vim on "foo" profile
+```
 
 ## 安装插件fzf
 ```bash
