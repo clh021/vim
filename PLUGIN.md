@@ -78,6 +78,18 @@ volt get tpope/vim-rsi
 在输入时需要临时删除几个字符时该需求才成立，而此需求通过 cb|cw|c$ 等操作方式解决了。
 经验积累: 需要多熟悉修改操作后直接进入插入模式的命令,如: c,s
 
+## 安装 jiangmiao/auto-pairs
+期望: 自动补全括号引号，并置中光标
+```bash
+volt get jiangmiao/auto-pairs
+```
+
+## 安装 vim-airline
+期望: 体验更友好舒适的状态栏
+```bash
+volt get vim-airline/vim-airline
+```
+
 ## 更多插件
 
 https://vimawesome.com/
