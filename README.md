@@ -12,6 +12,7 @@
 ### 自己笔记本上使用
 - clone 本项目
 - mkdir .vim/{.backup,.swp,.undo} -p
+- 或: alias vim='vim -u $HOME/Projects/vim/.LianghongVim/.vimrc' # vim 配置独立维护
 #### Vim
 - mkdir ~/.vim/
 - echo 'source ~/Projects/vim/.LianghongVim/.vimrc' > ~/.vim/vimrc
