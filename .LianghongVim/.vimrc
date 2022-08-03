@@ -4,6 +4,7 @@ source <sfile>:h/init/mapping.vim
 source <sfile>:h/init/functions.vim
 source <sfile>:h/init/autocmd.vim
 "  source <sfile>:h/plugins/plug.vim
+source <sfile>:h/plugins/startify.vim
 source <sfile>:h/plugins/nerdtree.vim
 source <sfile>:h/plugins/gruvbox.vim
 "  source <sfile>:h/init/plugins.vim
