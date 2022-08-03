@@ -6,8 +6,8 @@ let g:maplocalleader = ','
 nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
 nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
 cnoremap w!! w !sudo tee % >/dev/null
-inoremap ff <Esc>
-vnoremap <nowait> ff <Esc>
+inoremap jk <Esc>
+"vnoremap <nowait> ff <Esc>
 nmap <leader>w :w!<cr> " 快速保存
 noremap <leader>q :qa<cr> " 退出所有
 nnoremap # #zzzv
