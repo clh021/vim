@@ -9,8 +9,9 @@
 "\ ]
 
 let g:startify_custom_header = 'startify#pad(startify#fortune#boxed())'
-let g:startify_custom_header_quotes = [ ["halou, nihao, wojiao chenlianghong", "", "-ahha" ]]
+"let g:startify_custom_header_quotes = [ ["halou, nihao, wojiao chenlianghong", "", "-ahha" ]]
 "let g:startify_custom_header_quotes = [ {-> systemlist('date')} ]
+let g:startify_custom_header_quotes = [ {-> systemlist('shuf -n1 "$HOME/Documents/sources/boshulaozi.txt"')} ]
 "let g:startify_custom_header = map(split(system('fortune ~/.vim/fortunes | cowsay -W 60'), '\n'), '"   ". v:val') + ['','']
 
 
