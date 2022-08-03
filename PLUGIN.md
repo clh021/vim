@@ -44,6 +44,18 @@ volt get mhinz/vim-startify
 volt get morhetz/gruvbox
 ```
 
+## 安装 vim-go 插件
+期望: 在 vim 中能流畅完成 go 工作任务
+```bash
+volt get fatih/vim-go
+```
+
+## 安装 vim-rsi 插件
+期望: 在 vim 输入时也能快速移动光标，不要切换模式
+```bash
+volt get tpope/vim-rsi
+```
+
 ## 更多插件
 
 https://vimawesome.com/
