@@ -44,6 +44,7 @@ set si " 智能缩进
 set smartcase " 智能匹配大小写
 set softtabstop=4 " 退回缩进的长度 让 vim 把连续数量的空格视为一个制表符
 set t_Co=256 " 启用256色
+set termguicolors " 开启24bit的颜色,显示更漂亮
 "set tabstop=4 " tab 显示出多少空格
 set undofile " 保留撤销历史
 set backupdir=~/.vim/.backup//
