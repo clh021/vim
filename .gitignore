@@ -10,3 +10,5 @@ coding
 *session*
 .vim/.undo/*
 .vim/.netrwhist
+.undo
+.netrwhist
