@@ -74,9 +74,9 @@ volt get fatih/vim-go
 ```bash
 volt get tpope/vim-rsi
 ```
-该插件已经被禁用或者卸载，原因如下:
-在输入时需要临时删除几个字符时该需求才成立，而此需求通过 cb|cw|c$ 等操作方式解决了。
-经验积累: 需要多熟悉修改操作后直接进入插入模式的命令,如: c,s
+> 该插件已经被卸载
+> 在输入时需要临时删除几个字符时该需求才成立，而此需求通过 cb|cw|c$ 等操作方式解决了。
+> 经验积累: 需要多熟悉修改操作后直接进入插入模式的命令,如: c,s
 
 ## 安装 jiangmiao/auto-pairs
 期望: 自动补全括号引号，并置中光标
@@ -88,6 +88,12 @@ volt get jiangmiao/auto-pairs
 期望: 体验更友好舒适的状态栏
 ```bash
 volt get vim-airline/vim-airline
+```
+
+## 安装 yegappan/grep
+期望: 更好的内容搜索
+```bash
+volt get yegappan/grep
 ```
 
 ## 更多插件
