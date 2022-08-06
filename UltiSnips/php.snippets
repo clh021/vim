@@ -1,0 +1,419 @@
+global !p
+def ucfirst(string):
+	return string[0].upper() + string[1:]
+
+def get_class_name(filename):
+	return ucfirst(filename.split(".")[0])
+
+def get_namespace(path):
+	return "\\".join(map(lambda d: ucfirst(d), path.split("/")[:-1]))
+endglobal
+
+snippet if
+if (${1:/* condition */}) {
+	${0:${VISUAL:\/\////}}
+}
+endsnippet
+
+snippet elif
+elseif (${1:/* condition */}) {
+	${0:${VISUAL:\/\////}}
+}
+endsnippet
+
+snippet else
+else {
+	${0:${VISUAL:\/\////}}
+}
+endsnippet
+
+snippet for
+for ($${1:i} = ${2:0}; $$1 ${3:<} ${4:0}; $$1${5:${3/^(<)?.*$/(?1:++:--)/}}) {
+	${0:${VISUAL:\/\////}}
+}
+endsnippet
+
+snippet each
+foreach ($${1:array} as $${2:key} => $${3:value}) {
+	${0:${VISUAL:\/\////}}
+}
+endsnippet
+
+snippet switch
+switch (${1:true}) {
+	case ${2:true}:
+		${0:${VISUAL:\/\////}}
+		break;
+
+	default:
+		//
+		break;
+}
+endsnippet
+
+snippet try
+try {
+	${0:${VISUAL:\/\////}}
+} catch (${1:Exception} $e) {
+	//
+}
+endsnippet
+
+snippet func
+function ${1:functionName}($2) {
+	${0:${VISUAL:\/\////}}
+}
+endsnippet
+
+snippet pubf
+public function ${1:methodName}($2): ${3:void}
+{
+	${0:${VISUAL:\/\////}}
+}
+endsnippet
+
+snippet pubsf
+public static function ${1:methodName}($2): ${3:void}
+{
+	${0:${VISUAL:\/\////}}
+}
+endsnippet
+
+snippet prof
+protected function ${1:methodName}($2): ${3:void}
+{
+	${0:${VISUAL:\/\////}}
+}
+endsnippet
+
+snippet prosf
+protected static function ${1:methodName}($2): ${3:void}
+{
+	${0:${VISUAL:\/\////}}
+}
+endsnippet
+
+snippet prif
+private function ${1:methodName}($2): ${3:void}
+{
+	${0:${VISUAL:\/\////}}
+}
+endsnippet
+
+snippet prisf
+private static function ${1:methodName}($2): ${3:void}
+{
+	${0:${VISUAL:\/\////}}
+}
+endsnippet
+
+snippet _c
+public function __construct($1)
+{
+	${0:${VISUAL:\/\////}}
+}
+endsnippet
+
+snippet __c
+${1/(,\s*)?(?:\w+)?(?:\s+)?(?:\$(\w+)?)?/(?2:private $$2;\\n    )/g}${1/^[^$]*(\$\w+)?.*$/(?1:\\n    )/}public function __construct($1)
+{
+	${1/(,\s*)?(?:\w+)?(?:\s+)?(?:\$(\w+)?)?/(?2:(?1:\\\\n        )$this->$2 = $$2;)/g}${0:`!p snip.rv = "" if re.match(r"^[^$]*(\$\w+)?.*$", t[1]).group(1) else "//"`}
+}
+endsnippet
+
+snippet handle
+${1/(,\s*)?(?:\w+)?(?:\s+)?(?:\$(\w+)?)?/(?2:private $$2;\\n    )/g}${1/^[^$]*(\$\w+)?.*$/(?1:\\n    )/}public function handle($1): ${2:void}
+{
+	${0:${VISUAL:\/\////}}
+}
+endsnippet
+
+snippet namespace
+namespace ${1:`!p snip.rv = get_namespace(path)`};
+endsnippet
+
+snippet class
+<?php
+
+namespace ${1:`!p snip.rv = get_namespace(path)`};
+
+class ${2:`!p snip.rv = get_class_name(fn)`}
+{
+	${0:${VISUAL:\/\////}}
+}
+endsnippet
+
+snippet aclass
+<?php
+
+namespace ${1:`!p snip.rv = get_namespace(path)`};
+
+abstract class ${2:`!p snip.rv = get_class_name(fn)`}
+{
+	${0:${VISUAL:\/\////}}
+}
+endsnippet
+
+snippet interface
+<?php
+
+namespace ${1:`!p snip.rv = get_namespace(path)`};
+
+interface ${2:`!p snip.rv = get_class_name(fn)`}
+{
+	${0:${VISUAL:\/\////}}
+}
+endsnippet
+
+snippet trait
+<?php
+
+namespace ${1:`!p snip.rv = get_namespace(path)`};
+
+trait ${2:`!p snip.rv = get_class_name(fn)`}
+{
+	${0:${VISUAL:\/\////}}
+}
+endsnippet
+
+snippet service
+<?php
+
+namespace ${1:`!p snip.rv = get_namespace(path)`};
+
+use App\Services\Service;
+
+class ${2:`!p snip.rv = get_class_name(fn)`} extends Service
+{
+	${3/(,\s*)?(?:\w+)?(?:\s+)?(?:\$(\w+)?)?/(?2:private $$2;\\n    )/g}${3/^[^$]*(\$\w+)?.*$/(?1:\\n    )/}public function handle($3): ${4:void}
+	{
+		${0:${VISUAL:\/\////}}
+	}
+}
+endsnippet
+
+snippet this
+$this->${0:${VISUAL}}
+endsnippet
+
+snippet this.
+$this->${0:${VISUAL}}
+endsnippet
+
+snippet .
+->${0:${VISUAL}}
+endsnippet
+
+snippet am
+array_map(function (${1:$row}) {
+	${0:${VISUAL:\/\////}}
+}, ${2:$array});
+endsnippet
+
+snippet ia
+in_array(${1:$needle}, ${2:$haystack})
+endsnippet
+
+snippet phpunit
+<?php
+
+namespace ${1:`!p snip.rv = get_namespace(path)`};
+
+use PHPUnit\Framework\TestCase;
+
+class ${2:`!p snip.rv = get_class_name(fn)`} extends TestCase
+{
+	${0:${VISUAL:\/\////}}
+}
+endsnippet
+
+snippet setup
+protected function setUp(): void
+{
+	parent::setUp();
+
+	${0:${VISUAL:\/\////}}
+}
+endsnippet
+
+snippet teardown
+protected function tearDown(): void
+{
+	m::close();
+
+	parent::tearDown();
+}
+endsnippet
+
+snippet t
+public function test${1:testName}()
+{
+	${0:${VISUAL:\/\////}}
+}
+endsnippet
+
+snippet test
+/**
+ * @test
+ */
+public function ${1:testName}()
+{
+	${0:${VISUAL:\/\////}}
+}
+endsnippet
+
+snippet m
+use Mockery as m;
+endsnippet
+
+snippet ase
+$this->assertEquals(${1:$expected}, ${2:$actual});
+endsnippet
+
+snippet asne
+$this->assertNotEquals(${1:$expected}, ${2:$actual});
+endsnippet
+
+snippet ast
+$this->assertTrue(${1:$actual});
+endsnippet
+
+snippet asf
+$this->assertFalse(${1:$actual});
+endsnippet
+
+snippet asn
+$this->assertNull(${1:$actual});
+endsnippet
+
+snippet asnn
+$this->assertNotNull(${1:$actual});
+endsnippet
+
+snippet asi
+$this->assertInstanceOf(${1:Expected}::class, ${2:$actual});
+endsnippet
+
+snippet asit
+$this->assertInternalType(${1:'string'}, ${2:actual});
+endsnippet
+
+snippet asc
+$this->assertCount(${1:$expected}, ${2:$haystack});
+endsnippet
+
+snippet asnc
+$this->assertNotCount(${1:$expected}, ${2:$haystack});
+endsnippet
+
+snippet asco
+$this->assertContains(${1:$needle}, ${2:$haystack});
+endsnippet
+
+snippet asnco
+$this->assertNotContains(${1:$needle}, ${2:$haystack});
+endsnippet
+
+snippet ashk
+$this->assertArrayHasKey(${1:$key}, ${2:$haystack});
+endsnippet
+
+snippet asnhk
+$this->assertArrayNotHasKey(${1:$key}, ${2:$haystack});
+endsnippet
+
+snippet em
+$this->expectException(${1:$Exception}::class);
+endsnippet
+
+snippet fillable
+protected $fillable = ['${1:name}'${0:${VISUAL}}];
+endsnippet
+
+snippet unittest
+<?php
+
+namespace ${1:`!p snip.rv = get_namespace(path)`};
+
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\Unit\UnitTest;
+
+class ${2:`!p snip.rv = get_class_name(fn)`} extends UnitTest
+{
+	use RefreshDatabase;
+
+	${0:${VISUAL:\/\////}}
+}
+endsnippet
+
+snippet featuretest
+<?php
+
+namespace ${1:`!p snip.rv = get_namespace(path)`};
+
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\Feature\FeatureTest;
+
+class ${2:`!p snip.rv = get_class_name(fn)`} extends FeatureTest
+{
+	use RefreshDatabase;
+
+	${0:${VISUAL:\/\////}}
+}
+endsnippet
+
+snippet cascade
+$table->foreign('${1:user}_id')->references('id')->on('${2:$1s}')->onDelete('cascade');
+endsnippet
+
+snippet factory
+$${1:user} = factory(${2:`!p snip.rv = ucfirst(t[1])`}::class)->create();
+endsnippet
+
+snippet get
+$${1:response} = $this->get('/api/v1/${2:users}');
+endsnippet
+
+snippet post
+$${1:response} = $this->post('/api/v1/${2:users}', $data = [
+	${3:'name' => 'foo',}
+]);
+endsnippet
+
+snippet put
+$${1:response} = $this->put('/api/v1/${2:users}', $data = [
+	${3:'name' => 'foo',}
+]);
+endsnippet
+
+snippet put
+$${1:response} = $this->delete('/api/v1/${2:users}');
+endsnippet
+
+snippet ass
+$response->assertStatus(${1:200});
+endsnippet
+
+snippet asj
+$response->assertJson(${1:['success' => true]});
+endsnippet
+
+snippet asej
+$response->assertExactJson(${1:['success' => true]});
+endsnippet
+
+snippet asjs
+$response->assertJsonStructure(${1:['id']});
+endsnippet
+
+snippet asdh
+$this->assertDatabaseHas('${1:users}', [
+	${2:'id' => $response->json()['id']},
+]);
+endsnippet
+
+snippet asdm
+$this->assertDatabaseMissing('${1:users}', [
+	${2:'id' => $response->json()['id']},
+]);
+endsnippet

@@ -43,3 +43,12 @@
 alias sudo='sudo -E'
 ```
 
+
+
+### coc branch
+```bash
+vim +PlugInstall +qall
+nvim --headless +PlugInstall +qall
+nvim +UpdateRemotePlugins +qa
+vim +'PlugInstall --sync' +qa
+```
