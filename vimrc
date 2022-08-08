@@ -58,7 +58,7 @@ set undolevels=100
 set hidden                            " switch buffers without saving
 set splitright                        " always open vertical split window in the right side
 set splitbelow                        " always open horizontal split window below
-set nostartofline
+"set nostartofline
 set switchbuf=useopen
 set scrolloff=4                       " start scrolling when n lines away from margins
 set tags=tags,tags.vendor
@@ -70,7 +70,7 @@ set lazyredraw                        " speedup vim
 set timeoutlen=1000
 set ttimeoutlen=0
 
-set nobomb                            " no BOM (Byte Order Mark)
+"set nobomb                            " no BOM (Byte Order Mark)
 set viminfo=                          " disable .viminfo file
 "set nobackup                          " no *~ backup files
 "set noswapfile
@@ -94,7 +94,7 @@ set shortmess=Ia                      " remove splash wording
 set ruler                             " show the cursor position all the time
 set wrap
 set linebreak
-set nolist
+"set nolist
 set nocursorline
 set nocursorcolumn
 set showmatch
@@ -103,7 +103,7 @@ set numberwidth=4
 set relativenumber
 set title
 set showcmd
-set noshowmode
+"set noshowmode
 set showtabline=2                     " always show tab line (the very top line)
 set laststatus=2                      " always show status line (the very bottom line)
 set synmaxcol=512
@@ -297,8 +297,8 @@ vmap <C-P> "zp
 " Notice: <Esc> "Ctrl + c 或者 Ctrl + [
 " Notice: cnoremap: w!! 获取特权保存
 " Notice: inoremap 必须 set nocompatible " 关闭兼容模式
-let g:mapleader = "\<Space>"
-let g:maplocalleader = ','
+"let g:mapleader = "\<Space>"
+"let g:maplocalleader = ','
 nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
 nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
 cnoremap w!! w !sudo tee % >/dev/null
