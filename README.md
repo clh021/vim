@@ -52,3 +52,17 @@ nvim --headless +PlugInstall +qall
 nvim +UpdateRemotePlugins +qa
 vim +'PlugInstall --sync' +qa
 ```
+
+### check color
+```bash
+#!/usr/bin/env bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/JohnMorales/dotfiles/master/colors/24-bit-color.sh)"
+```
+
+### check fonts
+```bash
+sudo apt-get install fonts-powerline
+# 设置终端软件的字体
+# git clone https://github.com/powerline/fonts.git --depth=1
+# cd fonts; ./install.sh
+```
