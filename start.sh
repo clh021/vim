@@ -8,6 +8,7 @@ OldPath=$(pwd)
 cd "$( dirname "${BASH_SOURCE[0]}" )"
 ProjPath=$(pwd)
 
+
 # arch=`dpkg --print-architecture` # amd64
 # arch=$(uname -m) # x86_64
 
@@ -43,3 +44,6 @@ cd "$OldPath"
 HOME=${ProjPath} $VimBin -u "${ProjPath}/.LianghongVim/.vimrc" ${CMD}
 # HOME=$(pwd) $VimBin -u "$ProjPath/.SpaceVim/vimrc" "$@"
 
+# mkdir -p ~/.cache/.vim.backup
+# mkdir -p ~/.cache/.vim.swp
+# mkdir -p ~/.cache/.vim.undo
