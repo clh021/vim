@@ -46,11 +46,14 @@ call plug#end()
 "  settings
 " =================
 
+set ai                                " 自动缩进
+set autochdir                         " 自动切换工作目录
+set autoindent                        " 打开自动缩进
+set autoread                          " 自动重载文件更新
 set nocompatible                      " not compatible with the old-fashion vi mode
 set backspace=2                       " allow backspacing over everything in insert nc >kkmode
 set history=1000                      " keep 1000 lines of command line history
 set undolevels=100
-set autoread                          " auto read when file is changed from outside
 set hidden                            " switch buffers without saving
 set splitright                        " always open vertical split window in the right side
 set splitbelow                        " always open horizontal split window below
@@ -68,9 +71,19 @@ set ttimeoutlen=0
 
 set nobomb                            " no BOM (Byte Order Mark)
 set viminfo=                          " disable .viminfo file
-set nobackup                          " no *~ backup files
-set noswapfile
-set nowritebackup
+"set nobackup                          " no *~ backup files
+"set noswapfile
+"set nowritebackup
+set directory=~/.cache/.vim.swp//
+set backupdir=~/.cache/.vim.backup//
+set undodir=~/.cache/.vim.undo//
+
+"---------- set encoding ----------------------------------------
+set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
+set termencoding=utf-8
+set encoding=utf-8
+"scriptencoding utf-8
+"---------- set encoding ----------------------------------------
 
 " visual
 set shortmess=Ia                      " remove splash wording
@@ -83,7 +96,7 @@ set nocursorcolumn
 set showmatch
 set number
 set numberwidth=4
-" set relativenumber
+set relativenumber
 set title
 set showcmd
 set noshowmode
@@ -97,6 +110,7 @@ set wildmode=list:full                " make tab completion for files/buffers ac
 set completeopt=menuone
 
 " folding
+" 基于语法折叠代码
 set foldenable
 set foldmethod=indent
 set foldlevel=100
@@ -111,7 +125,9 @@ set smartcase
 set autoindent
 set copyindent                        " copy the previous indentation on autoindenting
 set smarttab                          " insert tabs on the start of a line according to
-set expandtab                         " replace <TAB> with spaces
+set expandtab                         " replace <TAB> with spaces 用空格缩进
+"set noexpandtab                      " 用制表符缩进
+set hid                               " 可以在没有保存得情况下切换buffer
 set softtabstop=2                     " tab indent size
 set shiftwidth=2                      " auto indent size
 set tabstop=2                         " tab character size
@@ -124,6 +140,7 @@ set tm=500
 
 " gui
 set t_Co=256
+set termguicolors                     " enable 24bit Color beautiful
 set guifont=Source\ Code\ Pro:h15     " only available for the GUI version
 set linespace=3                       " only available for the GUI version
 set guioptions-=l                     " remove gui scrollbar
@@ -152,6 +169,8 @@ set wildignore+=tmp/**
 filetype plugin indent on
 syntax on
 colorscheme tomorrow-night
+
+au InsertLeave *.sh,*.php write " 退出插入模式指定类型的文件自动保存
 
 " cursorline switched while focus is switched to another split window
 " autocmd WinEnter * setlocal cursorline
