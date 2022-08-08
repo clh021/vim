@@ -11,7 +11,7 @@
 前提是宿主机上真的安装有 `vim`或者`nvim`。
 ### 自己笔记本上使用
 - clone 本项目
-- mkdir .vim/{.backup,.swp,.undo} -p
+- mkdir -p ~/.cache/{.vim.backup,.vim.swp,.vim.undo}
 - 或: alias vim='vim -u $HOME/Projects/vim/.LianghongVim/.vimrc' # vim 配置独立维护
 #### Vim
 - mkdir ~/.vim/

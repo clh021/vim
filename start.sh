@@ -44,6 +44,4 @@ cd "$OldPath"
 HOME=${ProjPath} $VimBin -u "${ProjPath}/.LianghongVim/.vimrc" ${CMD}
 # HOME=$(pwd) $VimBin -u "$ProjPath/.SpaceVim/vimrc" "$@"
 
-# mkdir -p ~/.cache/.vim.backup
-# mkdir -p ~/.cache/.vim.swp
-# mkdir -p ~/.cache/.vim.undo
+#mkdir -p ~/.cache/{.vim.backup,.vim.swp,.vim.undo}
