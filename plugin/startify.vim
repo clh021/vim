@@ -11,7 +11,7 @@
 let g:startify_custom_header = 'startify#pad(startify#fortune#boxed())'
 "let g:startify_custom_header_quotes = [ ["halou, nihao, wojiao chenlianghong", "", "-ahha" ]]
 "let g:startify_custom_header_quotes = [ {-> systemlist('date')} ]
-let g:startify_custom_header_quotes = [ {-> systemlist('shuf -n1 "$HOME/.vim/.LianghongVim/boshulaozi.txt"')} ]
+let g:startify_custom_header_quotes = [ {-> systemlist('shuf -n1 "$HOME/.vim/.assets/boshulaozi.txt"')} ]
 "let g:startify_custom_header = map(split(system('fortune ~/.vim/fortunes | cowsay -W 60'), '\n'), '"   ". v:val') + ['','']
 
 
@@ -35,7 +35,7 @@ let g:startify_custom_header_quotes = [ {-> systemlist('shuf -n1 "$HOME/.vim/.Li
 "let g:startify_custom_header = 'startify#pad(startify#fortune#quote())' "
 "直接显示语句
 
-let g:startify_custom_footer = [ "     " . system('shuf -n1 "$HOME/.vim/.LianghongVim/mingyan.txt"') ]
+let g:startify_custom_footer = [ "     " . system('shuf -n1 "$HOME/.vim/.assets/mingyan.txt"') ]
 "let g:startify_custom_header = [ 'jjjjjjjjjjj', 'ssssssssssssssssssssskjj' ]
 "let g:startify_custom_footer = [
 "\ '     Be happy, but never satisfied.(生活要快乐，但绝不要安于现状。)',
