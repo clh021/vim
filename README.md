@@ -22,9 +22,8 @@
 
 ## 这个配置有什么特别？
 - 使用 `;` 来作为 `:`使用，提前预防左手小指头的肌肉损伤。  `:` 仍然可用。
-- ff -> Esc InsertMode&ViewMode (特殊情形请记得使用 Ctrl+c)。
+- jk -> Esc InsertMode&ViewMode (特殊情形请记得使用 Ctrl+c, Ctrl+[)。
 - 使用 `<space>` 作为 leader 键。 暂未添加 leader 绑定功能。
-- 暂未启用任何插件，目前已经基本够用。
 
 ## 其它
 ### 查看/导出 所有快捷键配置
@@ -66,3 +65,7 @@ sudo apt-get install fonts-powerline
 # git clone https://github.com/powerline/fonts.git --depth=1
 # cd fonts; ./install.sh
 ```
+
+### superTab
+使用 <Tab> 来满足你所有的插入完成需求
+
