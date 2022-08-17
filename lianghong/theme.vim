@@ -1,6 +1,8 @@
 set t_Co=256
 set termguicolors                     " enable 24bit Color beautiful
 
+set nocompatible
+
 set ai                                " 自动缩进
 set autochdir                         " 自动切换工作目录
 set autoindent                        " 打开自动缩进

@@ -74,8 +74,7 @@ nmap <C-W>< :vertical resize -10<CR>
 " 关闭搜索高亮
 nmap <Leader><Space> :nohlsearch<CR>
 
-" 快速复制粘贴
-nmap <C-Y> "zY
+" 视图模式快速复制粘贴
 vmap <C-Y> "zy
 vmap <C-P> "zp
 
