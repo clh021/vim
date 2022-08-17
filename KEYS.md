@@ -13,6 +13,13 @@ n <C-K> 当前行上移
 
 :vsp  水平分割爽口
 :Ag   搜索代码内容
+n <C+p> 搜索当前目录下的文件
+
+i  ,<Tab> 打开补全列表,Ctrl+p选中会自动写入(也可以Ctrl+y写入),继续输入其它内容即可
+n  g]     查看函数定义
+n  g[     返回函数使用
+n  ,mo    auto import
+   ,m=    auto format
 
 imap <C-X><C-K> <Plug>(fzf-complete-word)
 imap <C-X><C-F> <Plug>(fzf-complete-path)
@@ -23,8 +30,6 @@ imap <C-X><C-L> <Plug>(fzf-complete-line)
 
 
 
-
-2022年 08月 16日 星期二 20:11:23 CST
 
 
 " =================
@@ -155,5 +160,13 @@ nnoremap g; g;zz
 nnoremap n nzzzv
 nnoremap ; :
 vnoremap ; :
+
+
+
+
+
+
+2022年 08月 17日 星期三 08:10:16 CST
+
 
 ```

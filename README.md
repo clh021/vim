@@ -66,6 +66,3 @@ sudo apt-get install fonts-powerline
 # cd fonts; ./install.sh
 ```
 
-### superTab
-使用 <Tab> 来满足你所有的插入完成需求
-
