@@ -71,7 +71,7 @@ set timeoutlen=1000
 set ttimeoutlen=0
 
 "set nobomb                            " no BOM (Byte Order Mark)
-set viminfo=                          " disable .viminfo file
+" set viminfo=                          " disable .viminfo file
 "set nobackup                          " no *~ backup files
 "set noswapfile
 "set nowritebackup
