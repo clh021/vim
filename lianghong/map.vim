@@ -38,12 +38,6 @@ nmap <Leader>k8 :set foldlevel=7<CR>
 nmap <Leader>k9 :set foldlevel=8<CR>
 nmap <Leader>k0 :set foldlevel=100<CR>
 
-
-" 跳转到定义
-" nmap g] g<C-]>
-nmap g] <C-]>
-nmap g[ <C-O>
-
 " 缩进
 nmap g. v>
 nmap g, v<
