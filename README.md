@@ -22,5 +22,5 @@
 
 ## 这个配置有什么特别？
 - 使用 `;` 来作为 `:`使用，提前预防左手小指头的肌肉损伤。  `:` 仍然可用。
-- jk -> Esc InsertMode&ViewMode (特殊情形请记得使用 Ctrl+c, Ctrl+[)。
+- jk -> Esc InsertMode&ViewMode (特殊情形请记得使用 `Ctrl+c`, `Ctrl+[`)。
 - 使用 `<space>` 作为 leader 键。 暂未添加 leader 绑定功能。
