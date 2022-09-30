@@ -21,4 +21,4 @@ set splitbelow                        " always open horizontal split window belo
 
 filetype plugin indent on
 syntax on
-colorscheme tomorrow-night
+colorscheme darkblue                  " 尽可能兼容 vim 和 nvim
